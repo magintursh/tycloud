@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: tycloud-server-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+#      routes:
+#        - id: default_path_to_http
+#          uri: https://windmt.com
+#          order: 10000
+#          predicates:
+#            - Path=/**
+#          filters:
+#            - SetPath=/
+server:
+  port: 10004
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10001/eureka/
+
