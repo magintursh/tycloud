@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>tycloud-server</artifactId>
-        <groupId>org.tycloud</groupId>
+        <groupId>org.typroject</groupId>
         <version>2.0.1-Ty</version>
     </parent>
 

@@ -18,25 +18,10 @@ import java.util.List;
 public class LocationInfoService extends BaseService<LocationInfoModel,LocationInfo,LocationInfoMapper> implements IService<LocationInfo> {
 
 
-    public static final String LOCATIONINFO="LOCATIONINFO";
-
-    public static final String LOCATIONINFO_LIST="LOCATIONINFO_LIST";
-
-
-    public static final String cacheKeyForLocationinfoModel(String locationCode)
-    {
-        return Redis.genKey(CacheType.ERASABLE.name(),LOCATIONINFO,locationCode);
-    }
-
-    public static final String cacheKeyForLocationList(String parentCode)
-    {
-        return Redis.genKey(CacheType.ERASABLE.name(),LOCATIONINFO_LIST,parentCode);
-    }
-
 
     public List<LocationInfoModel> getByParent(String  parentCode) throws Exception
     {
-       return this.queryForListWithCache(cacheKeyForLocationList(parentCode),null,false,parentCode);
+       return this.queryForListWithCache(this.genCacheKeyForModelList(parentCode),null,false,parentCode);
     }
 
 

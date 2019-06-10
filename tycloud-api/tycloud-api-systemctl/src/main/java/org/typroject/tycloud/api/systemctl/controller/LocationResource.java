@@ -41,7 +41,7 @@ public class LocationResource {
     @ApiOperation(value="获取所有省份信息")
     @RequestMapping(value = "/provinces", method = RequestMethod.GET)
     public ResponseModel<List<LocationInfoModel>> getProvince() throws Exception {
-        return ResponseHelper.buildRespons(locationInfoService.getByParent("0"));
+        return ResponseHelper.buildResponse(locationInfoService.getByParent("0"));
     }
 
 
@@ -50,7 +50,7 @@ public class LocationResource {
     @RequestMapping(value = "/{provinceCode}/cities", method = RequestMethod.GET)
     public ResponseModel<List<LocationInfoModel>> getCitiesByProvince(
             @PathVariable String provinceCode) throws Exception {
-        return ResponseHelper.buildRespons(locationInfoService.getByParent(provinceCode));
+        return ResponseHelper.buildResponse(locationInfoService.getByParent(provinceCode));
     }
 
     @TycloudOperation( ApiLevel = APILevel.ALL)
@@ -58,7 +58,7 @@ public class LocationResource {
     @RequestMapping(value = "/{cityCode}/regions", method = RequestMethod.GET)
     public ResponseModel<List<LocationInfoModel>> getRegionsByCity(
             @PathVariable String cityCode) throws Exception {
-        return ResponseHelper.buildRespons(locationInfoService.getByParent(cityCode));
+        return ResponseHelper.buildResponse(locationInfoService.getByParent(cityCode));
     }
 
     @TycloudOperation( ApiLevel = APILevel.ALL,needAuth = false)
@@ -66,7 +66,7 @@ public class LocationResource {
     @RequestMapping(value = "/{locationCode}", method = RequestMethod.GET)
     public ResponseModel<LocationInfoModel> getByCode(@PathVariable String locationCode)
             throws Exception {
-        return ResponseHelper.buildRespons(locationInfoService.getByCode(locationCode));
+        return ResponseHelper.buildResponse(locationInfoService.getByCode(locationCode));
     }
 
     @TycloudOperation( ApiLevel = APILevel.ALL)
@@ -74,7 +74,7 @@ public class LocationResource {
     @RequestMapping(value = "/{parentCode}/areas", method = RequestMethod.GET)
     public ResponseModel<List<LocationInfoModel>> getByParentCode(@PathVariable String parentCode)
             throws Exception {
-        return ResponseHelper.buildRespons(locationInfoService.getByParent(parentCode));
+        return ResponseHelper.buildResponse(locationInfoService.getByParent(parentCode));
     }
 
 }

@@ -87,7 +87,7 @@ public class SystemctlResource  {
         }
 
 
-        return ResponseHelper.buildRespons(controllerMethodName);
+        return ResponseHelper.buildResponse(controllerMethodName);
     }
 
 
