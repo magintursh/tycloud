@@ -38,7 +38,6 @@
 		<module>tycloud-server-notification</module>
 		<module>tycloud-server-eurka</module>
 		<module>tycloud-server-config</module>
-		<module>tycloud-server-config-admin</module>
 		<module>tycloud-server-gateway</module>
 		<module>tycloud-server-dashboard</module>
 		<module>tycloud-server-tracing</module>

@@ -10,20 +10,26 @@
 	</parent>
 
 
-	<artifactId>tycloud-api-privilege</artifactId>
+	<artifactId>tycloud-api-oauth2</artifactId>
 	<packaging>jar</packaging>
 
 
 
 
 
-	<name>tycloud-api-privilege</name>
-	<description>tycloud-api-privilege</description>
+	<name>tycloud-api-oauth2</name>
+	<description>tycloud-api-oauth2</description>
 
-
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<security-jwt.version>1.0.9.RELEASE</security-jwt.version>
+		<jjwt.version>0.9.0</jjwt.version>
+	</properties>
 
 
 	<dependencies>
+
 
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -35,12 +41,43 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-oauth2</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-jwt</artifactId>
+			<version>${security-jwt.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.jolokia</groupId>
+			<artifactId>jolokia-core</artifactId>
+			<version>1.5.0</version>
+		</dependency>
+
+
 		<dependency>
 			<groupId>org.typroject</groupId>
 			<artifactId>tyboot-core-foundation</artifactId>
 			<version>${tyboot-version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.typroject</groupId>
 			<artifactId>tyboot-core-restful</artifactId>
@@ -52,33 +89,10 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+
 		<dependency>
 			<groupId>org.typroject</groupId>
 			<artifactId>tyboot-core-auth</artifactId>
-			<version>${tyboot-version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.typroject</groupId>
-					<artifactId>*</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>org.typroject</groupId>
-			<artifactId>tyboot-core-rdbms</artifactId>
-			<version>${tyboot-version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.typroject</groupId>
-					<artifactId>*</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>org.typroject</groupId>
-			<artifactId>tyboot-component-cache</artifactId>
 			<version>${tyboot-version}</version>
 			<exclusions>
 				<exclusion>
@@ -100,6 +114,44 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+
+
+
+		<dependency>
+			<groupId>org.typroject</groupId>
+			<artifactId>tyboot-core-rdbms</artifactId>
+			<version>${tyboot-version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.typroject</groupId>
+					<artifactId>*</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.typroject</groupId>
+			<artifactId>tyboot-component-cache</artifactId>
+			<version>${tyboot-version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.typroject</groupId>
+					<artifactId>*</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

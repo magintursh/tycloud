@@ -20,63 +20,7 @@
 
 
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
 
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-logging</artifactId>
-		</dependency>
-
-
-
-
-
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>de.codecentric</groupId>
-			<artifactId>spring-boot-admin-starter-client</artifactId>
-			<version>2.0.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-
-		<!--服务配置依赖-->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-config-client</artifactId>
-		</dependency>
-
-
-
-		<dependency>
-            <groupId>org.typroject</groupId>
-			<artifactId>tyboot-core-foundation</artifactId>
-			<version>1.0-Ty</version>
-		</dependency>
-
-
-		<dependency>
-			<groupId>org.typroject</groupId>
-			<artifactId>tyboot-core-restful</artifactId>
-			<version>1.0-Ty</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.typroject</groupId>
-					<artifactId>*</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
 
 	</dependencies>
 
@@ -104,6 +48,7 @@
 		<module>tycloud-api-auth</module>
 		<module>tycloud-api-systemctl</module>
 		<module>tycloud-api-privilege</module>
+		<module>tycloud-api-oauth2</module>
 	</modules>
 
 

@@ -25,11 +25,40 @@
 
 	<dependencies>
 
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>org.typroject</groupId>
+			<artifactId>tyboot-core-foundation</artifactId>
+			<version>${tyboot-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.typroject</groupId>
+			<artifactId>tyboot-core-restful</artifactId>
+			<version>${tyboot-version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.typroject</groupId>
+					<artifactId>*</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
 
 		<dependency>
 			<groupId>org.typroject</groupId>
 			<artifactId>tyboot-core-auth</artifactId>
-			<version>1.0-Ty</version>
+			<version>${tyboot-version}</version>
 			<exclusions>
 				<exclusion>
 					<groupId>org.typroject</groupId>
@@ -41,7 +70,7 @@
 		<dependency>
 			<groupId>org.typroject</groupId>
 			<artifactId>tyboot-core-rdbms</artifactId>
-			<version>1.0-Ty</version>
+			<version>${tyboot-version}</version>
 			<exclusions>
 				<exclusion>
 					<groupId>org.typroject</groupId>
@@ -53,7 +82,7 @@
 		<dependency>
 			<groupId>org.typroject</groupId>
 			<artifactId>tyboot-component-cache</artifactId>
-			<version>1.0-Ty</version>
+			<version>${tyboot-version}</version>
 			<exclusions>
 				<exclusion>
 					<groupId>org.typroject</groupId>
@@ -66,7 +95,7 @@
 		<dependency>
             <groupId>org.typroject</groupId>
 			<artifactId>tyboot-component-event</artifactId>
-			<version>1.0-Ty</version>
+			<version>${tyboot-version}</version>
 			<exclusions>
 				<exclusion>
                     <groupId>org.typroject</groupId>
