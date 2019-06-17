@@ -37,8 +37,6 @@ import java.util.List;
 public class RoleResource {
 
 
-
-
     @Autowired
     private RoleService roleService;
 
